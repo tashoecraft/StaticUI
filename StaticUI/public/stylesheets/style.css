@@ -1,8 +1,16 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
+.logo {
+  font-size: 45px; }
 
-a {
-  color: #00B7FF;
-}
+#map {
+  padding: 0; }
+
+#map-canvas {
+  padding: 0;
+  height: 100vh; }
+
+.nav-wrapper {
+  position: fixed;
+  top: 0; }
+
+.content {
+  float: left; }
