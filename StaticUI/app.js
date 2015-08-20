@@ -36,8 +36,6 @@ app.use(
     debug: true
   })
 );
-// api key AIzaSyCkOctgg_Jy1cZKlTokM6vhwgvY86mO5QU
-
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
