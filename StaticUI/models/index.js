@@ -7,7 +7,7 @@ var Place, Hotel, Activity, Restaurant, Day;
 var Schema = mongoose.Schema;
 
 var placeSchema = new Schema({
-  address: { type: String, required: true },
+  address: String,
   city: String,
   state:   String,
   phone: String,
@@ -16,38 +16,34 @@ var placeSchema = new Schema({
 
 var hotelSchema = new Schema({
   name: { type: String, required: true },
-  place: {mongoose.Schema.Types.ObjectId, ref: 'Place'},
+  place: [placeSchema],
   num_stars:   {type: Number, min: 1, max:5},
   amenities: [String]
 });
 
 var activitySchema = new Schema({
   name: { type: String, required: true },
-  place: {mongoose.Schema.Types.ObjectId, ref: 'Place'},
+  place: [placeSchema],
   age_range: String
 });
 
 var restaurantSchema = new Schema({
   name: { type: String, required: true },
-  place: {mongoose.Schema.Types.ObjectId, ref: 'Place'},
+  place: [placeSchema],
   cuisines:   String,
   price: { type: String, required: true }
-});
-
-var daySchema = new Schema({
-
 });
 
 Place = mongoose.model('Place', placeSchema);
 Hotel = mongoose.model('Hotel', hotelSchema);
 Activity = mongoose.model('Activity', activitySchema);
 Restaurant = mongoose.model('Restaurant', restaurantSchema);
-Day = mongoose.model('Day', daySchema);
+// Day = mongoose.model('Day', daySchema);
 
 module.exports = {
   Place: Place,
   Hotel: Hotel,
   Activity: Activity,
-  Restaurant: Restaurant,
-  Day: Day
-}
+  Restaurant: Restaurant
+  // Day: Day
+};

@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="input-field">
+  <div class='select-wrapper'>
+   <select>
+     <option value="" disabled selected>Hotels</option>
+     {% for hotel in  all_hotels %}
+           <option value="{{loop.index}}">{{hotel.name}}<span class="badge">                  {{hotel.num_stars}}</span></option>
+     {% endfor %}
+   </select>
+ </div>
+<div class="input-field col s4 m4 l4">
+   <div class='select-wrapper'>
+    <select>
+      <option value="" disabled selected>Restaurants</option>
+      {% for restaurant in  all_restaurants %}
+            <option value="{{loop.index}}">{{restaurant.name}}</option>
+      {% endfor %}
+    </select>
+  </div>
+<div class="input-field col s12 m12 l12">
+    <div class='select-wrapper lastOne'>
+     <select>
+       <option value="" disabled selected>Activities</option>
+       {% for activities in  all_activities %}
+             <option value="{{loop.index}}">{{activities.name}}</option>
+       {% endfor %}
+     </select>
+</div>
+{% endblock %}
