@@ -4,9 +4,9 @@
 <div class="input-field">
   <div class='select-wrapper'>
    <select>
-     <option value="" disabled selected>Hotels</option>
+     <option value="" disabled selected><i class="fa fa-bed">Hotel</i></option>
      {% for hotel in  all_hotels %}
-           <option value="{{loop.index}}">{{hotel.name}}<span class="badge">                  {{hotel.num_stars}}</span></option>
+           <option value="{{loop.index}}">{{hotel.name}}<span class="badge">   {{hotel.num_stars}}</span></option>
      {% endfor %}
    </select>
  </div>
